@@ -149,8 +149,10 @@ const styles = StyleSheet.create({
     padding: wp(0.7),
     alignItems: "center",
     borderRadius: 5,
-    width: 300,
-    marginLeft: 500,
+    // width: 300,
+    // marginLeft: 500,
+    width: wp(70),           // Adjusted for responsiveness
+    marginLeft: wp(15),
   },
   backButtonText: {
     // fontSize: hp(2.2),
@@ -164,8 +166,8 @@ const styles = StyleSheet.create({
     padding: wp(0.7),
     alignItems: "center",
     borderRadius: 5,
-    width: 300,
-    marginLeft: 500,
+    width: wp(70),
+    marginLeft: wp(15),
     marginBottom: hp(2),
   },
   addButtonText: {
@@ -189,8 +191,10 @@ const styles = StyleSheet.create({
     marginTop: hp(5),
   },
   recipeCard: {
-    width: 400, // Make recipe card width more compact
-    height: 300, // Adjust the height of the card to fit content
+   // width: 400, // Make recipe card width more compact
+    width: wp(80),
+    //height: wp(80),
+    //height: 300, // Adjust the height of the card to fit content
     backgroundColor: "#fff",
     padding: wp(3),
     borderRadius: 8,
@@ -199,11 +203,19 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
     shadowOffset: { width: 0, height: 2 },
+    alignItems: "center",
     elevation: 3, // for Android shadow
   },
+  // recipeImage: {
+  //   width: 300, // Set width for recipe image
+  //   height: 150, // Adjust height of the image
+  //   borderRadius: 8,
+  //   marginBottom: hp(1),
+  // },
+  // 📷 Recipe image
   recipeImage: {
-    width: 300, // Set width for recipe image
-    height: 150, // Adjust height of the image
+    //width: wp(70),
+    height: hp(25),
     borderRadius: 8,
     marginBottom: hp(1),
   },
@@ -212,11 +224,13 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     color: "#111827",
     marginBottom: hp(0.5),
+    textAlign: "center"
   },
   recipeDescription: {
     fontSize: hp(1.8),
     color: "#6B7280",
     marginBottom: hp(1.5),
+    textAlign: "center"
   },
   actionButtonsContainer: {
     flexDirection: "row",
@@ -227,7 +241,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#34D399",
     padding: wp(0.5),
     borderRadius: 5,
-    width: 100, // Adjust width of buttons to be more compact
+    width: wp(25),
+    // width: 100, // Adjust width of buttons to be more compact
     alignItems: "center",
   },
   editButtonText: {
@@ -239,7 +254,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#EF4444",
     padding: wp(0.5),
     borderRadius: 5,
-    width: 100, // Adjust width of buttons to be more compact
+    width: wp(25),
+    // width: 100, // Adjust width of buttons to be more compact
     alignItems: "center",
   },
   deleteButtonText: {

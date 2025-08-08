@@ -87,12 +87,12 @@ export default function CustomRecipesScreen() {
       <View style={styles.contentContainer} testID="contentContainer">
         <Text style={styles.recipeTitle}>{recipe.name}</Text>
         <View style={styles.sectionContainer}>
-          <Text style={styles.sectionTitle}>Content</Text>
-          <Text style={styles.contentText}>{recipe.description}</Text>
-        </View>
-        <View style={styles.sectionContainer}>
           <Text style={styles.sectionTitle}>Ingredients</Text>
           <Text style={styles.contentText}>{recipe.ingredients}</Text>
+        </View>
+        <View style={styles.sectionContainer}>
+          <Text style={styles.sectionTitle}>Instructions</Text>
+          <Text style={styles.contentText}>{recipe.description}</Text>
         </View>
       </View>
     </ScrollView>
@@ -101,65 +101,129 @@ export default function CustomRecipesScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "white",
     flex: 1,
-  },
-  scrollContent: {
-    paddingBottom: 30,
-  },
-  imageContainer: {
-    flexDirection: "row",
-    justifyContent: "center",
-  },
-  recipeImage: {
-    width: wp(98),
-    height: hp(50),
-    borderRadius: 35,
-    borderBottomLeftRadius: 40,
-    borderBottomRightRadius: 40,
-    marginTop: 4,
-  },
-  contentContainer: {
-    paddingHorizontal: wp(4),
-    paddingTop: hp(4),
-  },
-  recipeTitle: {
-    fontSize: hp(3),
-    fontWeight: "bold",
-    color: "#4B5563",
-    marginBottom: hp(2),
-  },
-  sectionContainer: {
-    marginBottom: hp(2),
-  },
-  sectionTitle: {
-    fontSize: hp(2.5),
-    fontWeight: "bold",
-    color: "#4B5563",
-    marginBottom: hp(1),
-  },
-  topButtonsContainer: {
-    width: "100%",
-    position: "absolute",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingTop: hp(4),
+    padding: wp(4),
+    backgroundColor: "#F9FAFB",
   },
   backButton: {
-    padding: 8,
-    borderRadius: 50,
-    marginLeft: wp(5),
-    backgroundColor: "white",
+    marginBottom: hp(1.5),
+    backgroundColor: "#4d4f55ff",
+    padding: wp(0.7),
+    alignItems: "center",
+    borderRadius: 5,
+    // width: 300,
+    // marginLeft: 500,
+    width: wp(70),           // Adjusted for responsiveness
+    marginLeft: wp(15),
   },
-  favoriteButton: {
-    padding: 8,
-    borderRadius: 50,
-    marginRight: wp(5),
-    backgroundColor: "white",
+  backButtonText: {
+    // fontSize: hp(2.2),
+    // color: "#4F75FF",
+    color: "#fff",
+    fontWeight: "600",
+    fontSize: hp(2.2),
   },
-  contentText: {
-    fontSize: hp(1.6),
-    color: "#4B5563",
+  addButton: {
+    backgroundColor: "#eda445ff",
+    padding: wp(0.7),
+    alignItems: "center",
+    borderRadius: 5,
+    width: wp(70),
+    marginLeft: wp(15),
+    marginBottom: hp(2),
+  },
+  addButtonText: {
+    color: "#fff",
+    fontWeight: "600",
+    fontSize: hp(2.2),
+  },
+  scrollContainer: {
+    paddingBottom: hp(2),
+    height: "auto",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    flexWrap: "wrap",
+  },
+  norecipesText: {
+    textAlign: "center",
+    fontSize: hp(2),
+    color: "#6B7280",
+    marginTop: hp(5),
+  },
+  recipeCard: {
+   // width: 400, // Make recipe card width more compact
+    width: wp(80),
+    //height: wp(80),
+    //height: 300, // Adjust the height of the card to fit content
+    backgroundColor: "#fff",
+    padding: wp(3),
+    borderRadius: 8,
+    marginBottom: hp(2),
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 2 },
+    alignItems: "center",
+    elevation: 3, // for Android shadow
+  },
+  // recipeImage: {
+  //   width: 300, // Set width for recipe image
+  //   height: 150, // Adjust height of the image
+  //   borderRadius: 8,
+  //   marginBottom: hp(1),
+  // },
+  // 📷 Recipe image
+  recipeImage: {
+    //width: wp(70),
+    height: hp(25),
+    borderRadius: 8,
+    marginBottom: hp(1),
+  },
+  recipeTitle: {
+    fontSize: hp(2),
+    fontWeight: "600",
+    color: "#111827",
+    marginBottom: hp(0.5),
+    textAlign: "center"
+  },
+  recipeDescription: {
+    fontSize: hp(1.8),
+    color: "#6B7280",
+    marginBottom: hp(1.5),
+    textAlign: "center"
+  },
+  actionButtonsContainer: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    gap: wp(5),
+    marginTop: hp(1),
+  },
+  editButton: {
+    backgroundColor: "#34D399",
+    padding: wp(0.5),
+    borderRadius: 5,
+    width: wp(25),
+    // width: 100, // Adjust width of buttons to be more compact
+    alignItems: "center",
+  },
+  editButtonText: {
+    color: "#fff",
+    fontWeight: "600",
+    fontSize: hp(1.8),
+  },
+  deleteButton: {
+    backgroundColor: "#EF4444",
+    padding: wp(0.5),
+    borderRadius: 5,
+    width: wp(25),
+    // width: 100, // Adjust width of buttons to be more compact
+    alignItems: "center",
+  },
+  deleteButtonText: {
+    color: "#fff",
+    fontWeight: "600",
+    fontSize: hp(1.8),
   },
 });
