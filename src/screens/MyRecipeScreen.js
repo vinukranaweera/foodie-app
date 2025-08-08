@@ -67,18 +67,19 @@ export default function MyRecipeScreen() {
 
   return (
     <View style={styles.container}>
-      {/* Back Button */}
-      <TouchableOpacity
-        onPress={() => navigation.goBack()}
-        style={styles.backButton}
-      >
-        <Text style={styles.backButtonText}>Back To Home</Text>
-      </TouchableOpacity>
+      <View style={styles.navigationButtonsContainer} testID="addBackButtons">
+        {/* Back Button */}
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={styles.backButton}
+        >
+          <Text style={styles.backButtonText}>Back To Home</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity onPress={handleAddrecipe} style={styles.addButton}>
-        <Text style={styles.addButtonText}>Add New Recipe</Text>
-      </TouchableOpacity>
-
+        <TouchableOpacity onPress={handleAddrecipe} style={styles.addButton}>
+          <Text style={styles.addButtonText}>Add New Recipe</Text>
+        </TouchableOpacity>
+      </View>
       {loading ? (
         <ActivityIndicator size="large" color="#f59e0b" />
       ) : (
@@ -143,6 +144,12 @@ const styles = StyleSheet.create({
     padding: wp(4),
     backgroundColor: "#F9FAFB",
   },
+  navigationButtonsContainer: {
+    flexDirection: "column",
+    alignItems: "center",
+    // marginTop: hp(1),
+    // gap: wp(5),
+  },
   backButton: {
     marginBottom: hp(1.5),
     backgroundColor: "#4d4f55ff",
@@ -151,8 +158,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     // width: 300,
     // marginLeft: 500,
-    width: wp(70),           // Adjusted for responsiveness
-    marginLeft: wp(15),
+    width: wp(40), // Adjusted for responsiveness
+    // marginLeft: wp(10),
   },
   backButtonText: {
     // fontSize: hp(2.2),
@@ -166,8 +173,8 @@ const styles = StyleSheet.create({
     padding: wp(0.7),
     alignItems: "center",
     borderRadius: 5,
-    width: wp(70),
-    marginLeft: wp(15),
+    width: wp(40),
+    // marginLeft: wp(10),
     marginBottom: hp(2),
   },
   addButtonText: {
@@ -191,7 +198,7 @@ const styles = StyleSheet.create({
     marginTop: hp(5),
   },
   recipeCard: {
-   // width: 400, // Make recipe card width more compact
+    // width: 400, // Make recipe card width more compact
     width: wp(80),
     //height: wp(80),
     //height: 300, // Adjust the height of the card to fit content
@@ -224,18 +231,19 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     color: "#111827",
     marginBottom: hp(0.5),
-    textAlign: "center"
+    textAlign: "center",
   },
   recipeDescription: {
     fontSize: hp(1.8),
     color: "#6B7280",
     marginBottom: hp(1.5),
-    textAlign: "center"
+    textAlign: "center",
   },
   actionButtonsContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: hp(1),
+    gap: wp(5),
   },
   editButton: {
     backgroundColor: "#34D399",
