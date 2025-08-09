@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
   // },
   // 📷 Recipe image
   recipeImage: {
-    //width: wp(70),
+    width: wp(70),
     height: hp(25),
     borderRadius: 8,
     marginBottom: hp(1),
@@ -243,15 +243,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: hp(1),
-    gap: wp(5),
+    gap: wp(8),
   },
   editButton: {
     backgroundColor: "#34D399",
     padding: wp(0.5),
     borderRadius: 5,
-    width: wp(25),
+    width: wp(29),
     // width: 100, // Adjust width of buttons to be more compact
     alignItems: "center",
+    justifyContent: "center"
   },
   editButtonText: {
     color: "#fff",
@@ -262,9 +263,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#EF4444",
     padding: wp(0.5),
     borderRadius: 5,
-    width: wp(25),
+    width: wp(29),
     // width: 100, // Adjust width of buttons to be more compact
     alignItems: "center",
+    justifyContent: "center"
   },
   deleteButtonText: {
     color: "#fff",

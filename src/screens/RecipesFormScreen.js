@@ -91,7 +91,7 @@ export default function RecipesFormScreen({ route, navigation }) {
         style={styles.input}
       />
       <TextInput
-        placeholder="Description"
+        placeholder="Instructions"
         value={description}
         onChangeText={setDescription}
         multiline={true}

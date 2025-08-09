@@ -278,10 +278,6 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     fontFamily: "Lato",
   },
-  sectionContainer: {
-    marginHorizontal: wp(5),
-    marginBottom: 20,
-  },
   sectionTitle: {
     fontSize: hp(2.8),
     fontWeight: "bold",

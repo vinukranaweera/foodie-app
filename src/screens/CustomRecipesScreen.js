@@ -73,18 +73,23 @@ export default function CustomRecipesScreen() {
           onPress={() => navigation.goBack()}
           style={styles.backButton}
         >
-          <Text>Back</Text>
+          <Text style>Back</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={handleToggleFavorite}
-          style={styles.favoriteButton}
+          style={[
+            styles.favoriteButton,
+            {
+              backgroundColor: "white",
+            },
+          ]}
         >
           <Text>{isFavorite ? "♥" : "♡"}</Text>
         </TouchableOpacity>
       </View>
 
       {/* Recipe Details */}
-      <View style={styles.contentContainer} testID="contentContainer">
+      <View style={styles.recipeDetailsContainer} testID="recipeDetailsContainer">
         <Text style={styles.recipeTitle}>{recipe.name}</Text>
         <View style={styles.sectionContainer}>
           <Text style={styles.sectionTitle}>Ingredients</Text>
@@ -105,37 +110,29 @@ const styles = StyleSheet.create({
     padding: wp(4),
     backgroundColor: "#F9FAFB",
   },
+  topButtonsContainer: {
+    width: "100%",
+    position: "absolute",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingTop: hp(4),
+  },
   backButton: {
-    marginBottom: hp(1.5),
-    backgroundColor: "#4d4f55ff",
-    padding: wp(0.7),
-    alignItems: "center",
-    borderRadius: 5,
-    // width: 300,
-    // marginLeft: 500,
-    width: wp(70),           // Adjusted for responsiveness
-    marginLeft: wp(15),
+    padding: 8,
+    borderRadius: 50,
+    marginLeft: wp(5),
+    backgroundColor: "white",
   },
-  backButtonText: {
-    // fontSize: hp(2.2),
-    // color: "#4F75FF",
-    color: "#fff",
-    fontWeight: "600",
-    fontSize: hp(2.2),
+  favoriteButton: {
+    padding: 8,
+    borderRadius: 50,
+    borderWidth: 1,
+    marginRight: wp(5),
   },
-  addButton: {
-    backgroundColor: "#eda445ff",
-    padding: wp(0.7),
-    alignItems: "center",
-    borderRadius: 5,
-    width: wp(70),
-    marginLeft: wp(15),
-    marginBottom: hp(2),
-  },
-  addButtonText: {
-    color: "#fff",
-    fontWeight: "600",
-    fontSize: hp(2.2),
+  contentContainer: {
+    paddingHorizontal: wp(4),
+    paddingTop: hp(4),
   },
   scrollContainer: {
     paddingBottom: hp(2),
@@ -146,27 +143,25 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
   },
-  norecipesText: {
-    textAlign: "center",
-    fontSize: hp(2),
-    color: "#6B7280",
-    marginTop: hp(5),
-  },
-  recipeCard: {
-   // width: 400, // Make recipe card width more compact
-    width: wp(80),
-    //height: wp(80),
-    //height: 300, // Adjust the height of the card to fit content
-    backgroundColor: "#fff",
-    padding: wp(3),
-    borderRadius: 8,
+  sectionContainer: {
     marginBottom: hp(2),
-    shadowColor: "#000",
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    shadowOffset: { width: 0, height: 2 },
-    alignItems: "center",
-    elevation: 3, // for Android shadow
+  },
+  sectionTitle: {
+    fontSize: hp(2.5),
+    fontWeight: "bold",
+    color: "#4B5563", // text-neutral-700
+    marginBottom: hp(1),
+  },
+  // imageContainer: {
+  //   flexDirection: "row",
+  //   justifyContent: "center",
+  //   marginBottom: 20,
+  // },
+  scrollContent: {
+    paddingBottom: 30,
+  },
+  recipeDetailsContainer: {
+    marginBottom: hp(2),
   },
   // recipeImage: {
   //   width: 300, // Set width for recipe image
@@ -177,53 +172,20 @@ const styles = StyleSheet.create({
   // 📷 Recipe image
   recipeImage: {
     //width: wp(70),
-    height: hp(25),
+    height: hp(45),
     borderRadius: 8,
     marginBottom: hp(1),
   },
   recipeTitle: {
-    fontSize: hp(2),
-    fontWeight: "600",
-    color: "#111827",
-    marginBottom: hp(0.5),
-    textAlign: "center"
+    fontSize: hp(3),
+    fontWeight: "bold",
+    color: "#4B5563", // text-neutral-700
+    marginBottom: hp(2.5),
   },
   recipeDescription: {
     fontSize: hp(1.8),
     color: "#6B7280",
     marginBottom: hp(1.5),
     textAlign: "center"
-  },
-  actionButtonsContainer: {
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    gap: wp(5),
-    marginTop: hp(1),
-  },
-  editButton: {
-    backgroundColor: "#34D399",
-    padding: wp(0.5),
-    borderRadius: 5,
-    width: wp(25),
-    // width: 100, // Adjust width of buttons to be more compact
-    alignItems: "center",
-  },
-  editButtonText: {
-    color: "#fff",
-    fontWeight: "600",
-    fontSize: hp(1.8),
-  },
-  deleteButton: {
-    backgroundColor: "#EF4444",
-    padding: wp(0.5),
-    borderRadius: 5,
-    width: wp(25),
-    // width: 100, // Adjust width of buttons to be more compact
-    alignItems: "center",
-  },
-  deleteButtonText: {
-    color: "#fff",
-    fontWeight: "600",
-    fontSize: hp(1.8),
   },
 });

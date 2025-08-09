@@ -64,7 +64,7 @@ export default function FavoriteScreen() {
             borderRadius: 5,
             marginTop: 10,
             width: 100,
-            alignItems: "center ",
+            alignItems: "center",
           }}
         >
           <Text style={{ color: "#fff" }}>Go back</Text>
