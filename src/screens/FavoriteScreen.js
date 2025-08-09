@@ -20,8 +20,8 @@ export default function FavoriteScreen() {
   // Assuming you have a similar structure for recipes in your Redux store
   const favoriteRecipes = useSelector((state) => state.favorites);
   const favoriteRecipesList = favoriteRecipes?.favoriterecipes || [];
-  console.log(favoriteRecipes.favoriterecipes);
-  console.log("favoriteRecipesList", favoriteRecipesList);
+  //console.log(favoriteRecipes.favoriterecipes);
+  //console.log("favoriteRecipesList", favoriteRecipesList);
 
   const renderItem = ({ item, index }) => (
     <TouchableOpacity
@@ -78,7 +78,7 @@ export default function FavoriteScreen() {
       {/* Heading */}
       <View testID="FavoriteRecipes">
         <Text
-          style={{ fontSize: hp(3.8), marginTop: hp(4), marginLeft: 20 }}
+          style={{ fontSize: hp(3.8), marginTop: hp(10), marginLeft: 20 }}
           className="font-semibold text-neutral-600"
         >
           My Favorite Recipes

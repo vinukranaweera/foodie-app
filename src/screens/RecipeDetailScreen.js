@@ -18,7 +18,7 @@ import { toggleFavorite } from "../redux/favoritesSlice"; // Redux action
 
 export default function RecipeDetailScreen(props) {
   const recipe = props.route.params.recipe; // recipe passed from previous screen
-  console.log(recipe);
+  //console.log(recipe);
   const dispatch = useDispatch();
   const favoriterecipes = useSelector(
     (state) => state.favorites.favoriterecipes
@@ -257,9 +257,9 @@ const styles = StyleSheet.create({
   },
   miscContainer: {
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-evenly",
     marginBottom: 20,
-    paddingHorizontal: wp(4),
+    // paddingHorizontal: wp(4),
   },
   miscItem: {
     alignItems: "center",

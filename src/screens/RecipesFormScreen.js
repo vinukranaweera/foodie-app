@@ -114,6 +114,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: wp(4),
+    justifyContent: "center"
   },
   input: {
     marginTop: hp(4),

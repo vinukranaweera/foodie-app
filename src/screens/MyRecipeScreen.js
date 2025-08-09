@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
   navigationButtonsContainer: {
     flexDirection: "column",
     alignItems: "center",
-    // marginTop: hp(1),
+    marginTop: hp(10),
     // gap: wp(5),
   },
   backButton: {
